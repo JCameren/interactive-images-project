@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial;
+    background: #EBE7E7;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 32px;
+  /*   background: #E0DDDD; */
+    opacity: 0;
+    transform: translateY(-100px);
+    animation: fadeFromTop 2s forwards 2s;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    animation: fadeFromLeft 2s forwards 1s;
+    padding: 32px;
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  
+  button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: darkcyan;
+    color: white;
+    margin: 0 10px 0 10px;
+    font-size: 2rem;
+    
+  }
+  
+  button:hover {
+    transform: scale(0.95);
+  }
+  
+  #gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+    animation: fadeIn 2s forwards;
+  }
+  
+  #gallery img {
+    width: 25%;
+    height: 300px;
+    object-fit: cover;
+    margin-top: 8px;
+    padding: 0 4px;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+  }
+  
+  
+  #gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  .active {
+    background-color: blue;
+    transform: scale(0.95);
+  }
+  
+  @media (max-width: 800px) {
+    #gallery img {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #gallery img {
+      width: 100%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  
+  @keyframes fadeFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px)
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(50px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  
+  @keyframes fadeFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px)
+    }
+     50% {
+      opacity: 0.5;
+      transform: translateX(50px)
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0)
+    }
+  }
